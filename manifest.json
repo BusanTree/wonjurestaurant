@@ -1,0 +1,25 @@
+{
+  "name": "원주 혁신도시 맛집 - 오늘 뭐 먹지?",
+  "short_name": "원주맛집",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff9f43",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

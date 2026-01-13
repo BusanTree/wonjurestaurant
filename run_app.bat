@@ -1,0 +1,6 @@
+@echo off
+echo Starting Wonju Food App Server...
+echo Please wait...
+start http://localhost:8080
+python -m http.server 8080 --bind 127.0.0.1
+pause
