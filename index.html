@@ -9,6 +9,7 @@
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot_style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ff9f43">
     <link rel="icon" type="image/png" href="assets/icon.png">
@@ -35,6 +36,7 @@
             <button id="btn-cafe" class="mode-btn cafe">☕ 카페</button>
         </div>
         <button id="btn-random" class="random-btn">🎲 랜덤 추천</button>
+        <button id="btn-chatbot" class="chatbot-btn">🤖 AI 챗봇</button>
     </div>
 
     <main>
@@ -52,6 +54,28 @@
                 <!-- Result content -->
             </div>
         </div>
+
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal" class="modal">
+        <div class="modal-content chatbot-content">
+            <button id="chatbot-close" class="close-btn">&times;</button>
+            <div class="chat-header">
+                <h3>🤖 AI 맛집 추천봇</h3>
+                <p>무엇을 도와드릴까요?</p>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will appear here -->
+                <div class="message bot">
+                    안녕하세요! 원주 혁신도시 맛집 전문가입니다. 무엇을 드시고 싶으신가요? 🍽️
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="오늘 뭐 먹을까요? (예: 매운거, 데이트)" autocomplete="off">
+                <button id="chat-send">➤</button>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -60,6 +84,7 @@
 
     <script src="data.js"></script>
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,226 @@
+/* Chatbot Button Specifics */
+.chatbot-btn {
+    background: #4a69bd;
+    /* Keep the distinct blue */
+    box-shadow: 0 8px 20px rgba(74, 105, 189, 0.3);
+}
+
+.chatbot-btn:hover {
+    background: #405eb5;
+    box-shadow: 0 12px 25px rgba(74, 105, 189, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Chatbot Modal Content overrides */
+#chatbot-modal {
+    z-index: 2000;
+}
+
+.chatbot-content {
+    width: 500px;
+    /* Slightly narrower for mobile feel */
+    height: 75vh;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.chat-header {
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.chat-header p {
+    margin: 4px 0 0;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Toggle close button color for this modal context */
+.chatbot-content .close-btn {
+    color: #333;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.chatbot-content .close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Messages Area */
+.chat-messages {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f4f6f9;
+    scroll-behavior: smooth;
+}
+
+.message {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+    animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.message.bot {
+    background: #ffffff;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.message.user {
+    background: linear-gradient(135deg, #4a69bd, #3c55a0);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 4px 15px rgba(74, 105, 189, 0.2);
+}
+
+/* Input Area */
+.chat-input-area {
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 12px;
+    background: white;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 14px 24px;
+    border: 2px solid #f0f2f5;
+    border-radius: 28px;
+    outline: none;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    background: #f8f9fa;
+    color: var(--text-color);
+}
+
+.chat-input-area input:focus {
+    border-color: #4a69bd;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(74, 105, 189, 0.1);
+}
+
+.chat-input-area button {
+    background: #4a69bd;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    /* Circle button */
+    border-radius: 50%;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.chat-input-area button:hover {
+    background: #3c55a0;
+    transform: rotate(10deg) scale(1.1);
+}
+
+.chat-input-area button:disabled {
+    background: #e0e0e0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* SVG Icon for send button instead of text if simpler, but text '전송' is fine. 
+   Let's keep text for now but styling it circle is nice. 
+   Actually '전송' might be too long for a 50px circle if font is large, 
+   but 2 chars is fine. */
+
+/* Typing indicator */
+.typing-dots {
+    display: inline-flex;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.typing-dots span {
+    width: 8px;
+    height: 8px;
+    background: #b2bec3;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

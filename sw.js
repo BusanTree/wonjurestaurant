@@ -1,9 +1,11 @@
-const CACHE_NAME = 'wonju-food-v1';
+const CACHE_NAME = 'wonju-food-v2';
 const ASSETS = [
     './',
     './index.html',
     './style.css',
+    './chatbot_style.css',
     './script.js',
+    './chatbot.js',
     './data.js',
     './assets/hero.png',
     './assets/icon.png',
