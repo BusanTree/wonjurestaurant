@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wonju-food-v3';
+const CACHE_NAME = 'wonju-food-v4';
 const ASSETS = [
     './',
     './index.html',
@@ -7,7 +7,7 @@ const ASSETS = [
     './script.js',
     './chatbot.js',
     './data.js',
-    './assets/hero.png',
+    './assets/hero_premium.jpg',
     './assets/icon.png',
     'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css'
 ];
